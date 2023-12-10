@@ -28,16 +28,10 @@ hatch version
 ```
 
 
-### Publish
-After the build completes successfully, upload the new distribution files to the Python Package Index (PyPI).
-Upload your package to PyPI using `twine`
-   ```shell
-   twine upload dist/*
-   ```
+
 
 ## CONTRIBUTION
 
-[Introduction - Hatch](https://hatch.pypa.io/latest/intro/)
 
 ```bash
 hatch new dialoget
@@ -45,6 +39,21 @@ hatch version minor
 python -m build
 ```
 
+### Publish
+After the build completes successfully, upload the new distribution files to the Python Package Index (PyPI).
+Upload your package to PyPI using `twine`
+
+```shell
+twine upload dist/*
+```
+
+
+How to start with hatch
+[Introduction - Hatch](https://hatch.pypa.io/latest/intro/)
+
+```bash
+hatch new dialoget
+```
 
 ```
 dialoget
