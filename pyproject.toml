@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "dialoget"
 dynamic = ["version"]
-description = ''
+description = "A Sentence Python decorator for displaying dynamic log messages."
 readme = "README.md"
 requires-python = ">=3.7"
 keywords = ["test", "framework", "dialogware", "Sentence", "console", "terminal", "time"]
@@ -27,9 +27,9 @@ classifiers = [
 dependencies = []
 
 [project.urls]
-Documentation = "https://github.com/unknown/dialoget#readme"
-Issues = "https://github.com/unknown/dialoget/issues"
-Source = "https://github.com/unknown/dialoget"
+Documentation = "https://github.com/dialoget/py#readme"
+Issues = "https://github.com/dialoget/py/issues"
+Source = "https://github.com/dialoget/py"
 
 [tool.hatch.version]
 path = "src/__about__.py"
@@ -146,8 +146,8 @@ omit = [
 ]
 
 [tool.coverage.paths]
-dialoget = ["src", "*/dialoget/src"]
-tests = ["tests", "*/dialoget/tests"]
+dialoget = ["src", "*/src"]
+tests = ["tests", "*/tests"]
 
 [tool.coverage.report]
 exclude_lines = [

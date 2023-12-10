@@ -21,8 +21,19 @@ pip install dialoget
 
 `dialoget` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
 
+## Version
+
+```bash
+hatch version
+```
 
 
+### Publish
+After the build completes successfully, upload the new distribution files to the Python Package Index (PyPI).
+Upload your package to PyPI using `twine`
+   ```shell
+   twine upload dist/*
+   ```
 
 ## CONTRIBUTION
 
@@ -30,6 +41,8 @@ pip install dialoget
 
 ```bash
 hatch new dialoget
+hatch version minor
+python -m build
 ```
 
 
