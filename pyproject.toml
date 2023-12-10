@@ -32,7 +32,7 @@ Issues = "https://github.com/dialoget/py/issues"
 Source = "https://github.com/dialoget/py"
 
 [tool.hatch.version]
-path = "src/__about__.py"
+path = "src/dialoget/__version__.py"
 
 [tool.hatch.envs.default]
 dependencies = [
@@ -62,7 +62,7 @@ dependencies = [
   "ruff>=0.0.243",
 ]
 [tool.hatch.envs.lint.scripts]
-typing = "mypy --install-types --non-interactive {args:src tests}"
+typing = "mypy --install-types --non-interactive {args:src/dialoget tests}"
 style = [
   "ruff {args:.}",
   "black --check --diff {args:.}",
@@ -137,17 +137,23 @@ ban-relative-imports = "all"
 # Tests can use magic values, assertions, and relative imports
 "tests/**/*" = ["PLR2004", "S101", "TID252"]
 
+[tool.hatch.build.targets.sdist]
+exclude = [
+  "/.github",
+  "/scripts",
+]
+
 [tool.coverage.run]
 source_pkgs = ["dialoget", "tests"]
 branch = true
 parallel = true
 omit = [
-  "src/__about__.py",
+  "src/dialoget/__version__.py",
 ]
 
 [tool.coverage.paths]
-dialoget = ["src", "*/src"]
-tests = ["tests", "*/tests"]
+dialoget = ["dialoget/src/dialoget", "*/dialoget/src/dialoget"]
+tests = ["tests", "*/dialoget/tests"]
 
 [tool.coverage.report]
 exclude_lines = [
